@@ -1,11 +1,9 @@
-prueba:
-    mongodbDatabase: exampleDb
-    mongodbUri: mongodb://127.0.0.1:27017
-    apiPort: 9898
+mongodbDatabase: exampleDb
+mongodbUri: mongodb://127.0.0.1:27017
+apiPort: 9898
     
 logging:
     level:
-        root: ERROR
         com.hacom.demo: DEBUG
         
 management:

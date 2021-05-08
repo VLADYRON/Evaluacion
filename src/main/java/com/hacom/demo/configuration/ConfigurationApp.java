@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "prueba")
+@ConfigurationProperties
 public class ConfigurationApp {
 
     private String mongodbDatabase;
