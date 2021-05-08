@@ -4,6 +4,7 @@ import com.hacom.demo.modelo.DateRangeRequest;
 import com.hacom.demo.modelo.TraceMsg;
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
+import javax.validation.Valid;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +39,7 @@ public class TraceMsgController {
     }
 
     @GetMapping()
-    public Flux<TraceMsg> extraer(@RequestBody DateRangeRequest dateRangeRequest) {
+    public Flux<TraceMsg> extraer(@RequestBody  @Valid DateRangeRequest dateRangeRequest) {
 
         return service.allFromTo(dateRangeRequest);
 

@@ -19,12 +19,11 @@ public class MongoConfig extends AbstractReactiveMongoConfiguration {
     @Autowired
     ConfigurationApp configuration;
 
-
     @Bean
     public MongoClient mongoClient() {
 
         return MongoClients.create(configuration.getMongodbUri());
-        
+
     }
 
     @Autowired
@@ -33,16 +32,15 @@ public class MongoConfig extends AbstractReactiveMongoConfiguration {
         return configuration.getMongodbDatabase();
 
     }
-    
-    
+
     @Bean
     public MongoCustomConversions customConversions() {
-        
+
         return new MongoCustomConversions(Arrays.asList(
                 new DateToOffsetDateTimeConverter(),
                 new OffsetDateTimeToDateConverter()
         ));
-        
+
     }
 
     public class DateToOffsetDateTimeConverter implements Converter<Date, OffsetDateTime> {
