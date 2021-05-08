@@ -1,0 +1,24 @@
+prueba:
+    mongodbDatabase: exampleDb
+    mongodbUri: mongodb://127.0.0.1:27017
+    apiPort: 9898
+    
+logging:
+    level:
+        root: ERROR
+        com.hacom.demo: DEBUG
+        
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+    endpoint:
+        metrics:
+            enabled: true
+        prometheus:
+            enabled: true
+    metrics:
+        export:
+            prometheus:
+                enabled: true
