@@ -32,7 +32,7 @@ public class TraceMsgServiceImp implements TraceMsgService {
 
         log.debug("Fecha inicio {}", dateRangeRequest.getFrom());
         log.debug("Fecha fin {}", dateRangeRequest.getTo());
-        return traceMsgRepository.allFromTo(dateRangeRequest.getFrom(), dateRangeRequest.getTo());
+        return traceMsgRepository.findTsBetween(dateRangeRequest.getFrom(), dateRangeRequest.getTo());
 
     }
 

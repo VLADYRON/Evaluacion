@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 
 public interface TraceMsgRepository extends ReactiveMongoRepository<TraceMsg, ObjectId> {
     
-    @Query("{'ts' : {$and:[{$gte:?0},{$lte:?1}]}")
-    public Flux<TraceMsg> allFromTo(OffsetDateTime from, OffsetDateTime to);
+    @Query("{'ts' : {$gte:?0, $lte:?1 }}")
+    public Flux<TraceMsg> findTsBetween(OffsetDateTime from, OffsetDateTime to);
 
 }
